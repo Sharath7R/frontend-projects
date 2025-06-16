@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    background: #f7f9fb;
+    color: #222;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.2rem;
+    color: #232946;
+}
+
+aside {
+    background: #232946;
+    color: #fff;
+    width: 230px;
+    min-height: 100vh;
+    padding: 2rem 1rem 1rem 1rem;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+aside h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+aside nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside nav li {
+    margin-bottom: 1.2rem;
+}
+
+aside nav a {
+    color: #eebbc3;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: block;
+}
+
+aside nav a.active,
+aside nav a:hover {
+    background: #eebbc3;
+    color: #232946;
+}
+
+main {
+    margin-left: 250px;
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+main section {
+    margin-bottom: 50px;
+}
+
+main h2 {
+    padding-bottom: 5px;
+    font-size: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid black;
+}
+
+.subtitle {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+section {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(35,41,70,0.06);
+    margin-bottom: 2rem;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+}
+
+section h3 {
+    color: #232946;
+    margin-top: 0;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+article ul {
+    padding-left: 1.2rem;
+}
+
+article ul li {
+    margin-bottom: 10px;
+}
+
+pre {
+    background: #232946;
+    color: #eebbc3;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+code, kbd {
+    background: #eebbc3;
+    color: #232946;
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    font-size: 1em;
+}
+
+kbd {
+    font-weight: bold;
+    border: 1px solid #232946;
+}
+
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: #555;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #232946;
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    aside {
+        position: static;
+        width: 100%;
+        min-height: unset;
+        padding: 1rem;
+        text-align: center;
+    }
+    main {
+        margin-left: 0;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px){
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    header {
+        height: 200px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+}
