@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #232946 0%, #9c27b0 100%);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.page-title {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.page-title h1 {
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+.page-title .hint {
+    color: #eebbc3;
+    font-size: 1rem;
+}
+
+section {
+    min-height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    perspective: 1200px;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+    transform: translate(-150px, -100px);
+}
+
+
+section::after {
+    content: '';
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+    transform: translate(150px, 100px);
+}
+
+
+.container {
+    position: relative;
+    width: 375px;
+    height: 220px;
+    z-index: 10;
+    transition: transform 0.6s cubic-bezier(.4,2,.6,1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    outline: none;
+}
+.container:focus,
+.container:hover {
+    transform: rotateY(180deg);
+}
+
+/* Card base styles */
+.container .card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    padding: 25px;
+    backdrop-filter: blur(25px);
+    background: linear-gradient(120deg, rgba(255,255,255,0.15) 60%, rgba(238,187,195,0.12) 100%);
+    box-shadow: 0 8px 32px rgba(35,41,70,0.18);
+    border: 1.5px solid rgba(255,255,255,0.18);
+    backface-visibility: hidden;
+    transition: box-shadow 0.3s;
+}
+.container .card:hover {
+    box-shadow: 0 12px 40px rgba(156,39,176,0.25);
+}
+
+/* Front face */
+.front-face header,
+.front-face .logo {
+    display: flex;
+    align-items: center;
+}
+.front-face header {
+    justify-content: space-between;
+}
+.front-face .logo img{
+    width: 45px;
+    margin-right: 15px;
+}
+.front-face .chip {
+    width: 50px;
+}
+.logo h5 {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #eebbc3;
+}
+.front-face .card-details {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+h6 {
+    font-size: 11px;
+    font-weight: 400;
+    color: #eebbc3;
+}
+h5.number {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #fff;
+}
+h5.name {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+.valid-date h5 {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Back face */
+.card.back-face {
+    border: none;
+    padding: 15px 25px 25px 25px;
+    transform: rotateY(180deg);
+    background: linear-gradient(120deg, rgba(156,39,176,0.18) 60%, rgba(255,255,255,0.12) 100%);
+}
+.card.back-face h6 {
+    font-size: 10px;
+    margin-bottom: 8px;
+}
+.card.back-face h6 a {
+    color: #eebbc3;
+    text-decoration: underline;
+}
+.card.back-face .stripe {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background-color: #232946;
+    opacity: 0.7;
+    border-radius: 6px;
+}
+.card.back-face .signature {
+    margin-top: 80px;
+    width: 85%;
+    height: 45px;
+    background-color: #fff;
+    color: #232946;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 5px;
+    background: repeating-linear-gradient(#fff 0, #fff 3px, #efefef 0, #efefef 9px);
+    box-shadow: 0 2px 8px rgba(35,41,70,0.08);
+}
+.back-face .signature i {
+    background-color: #fff;
+    font-size: 12px;
+    padding: 4px 12px;
+    margin-right: -30px;
+    border-radius: 3px;
+    z-index: 1;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.back-face h5 {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 400;
+}
+
+/* Footer credit */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #eebbc3;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    .container {
+        width: 95vw;
+        height: 56vw;
+        min-width: 220px;
+        min-height: 130px;
+        max-width: 350px;
+        max-height: 200px;
+    }
+    .page-title h1 {
+        font-size: 1.3rem;
+    }
+    .page-title p {
+        font-size: 0.95rem;
+    }
+}
